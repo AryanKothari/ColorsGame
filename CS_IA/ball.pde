@@ -30,7 +30,7 @@ class ball {
     }
   
     textFont(font, width/20);
-    text("Colors Galore", 70, 680);
+    text("Colors Galore", 210, 680);
   }
   
 }
