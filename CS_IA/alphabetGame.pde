@@ -125,8 +125,10 @@ class alphabetGame
   }
 
   public void checkAnswer(String answer) {
-    if (answer.equals(letter.get(letteronDisplay).getTOL())) {
-      letteronDisplay += 1;
+    if (needInstructions == false) {
+      if (answer.equals(letter.get(letteronDisplay).getTOL())) {
+        letteronDisplay += 1;
+      }
     }
   }
 }

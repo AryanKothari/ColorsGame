@@ -163,7 +163,7 @@ void mouseClicked() {
       alphabetGame.checkAnswer("lowercase");
     } 
 
-    if (mouseX> 1250 && mouseX < 1400 && mouseY > 100 && mouseY < 150) {
+    if (mouseX> 1150 && mouseX < 1300 && mouseY > 100 && mouseY < 1500) {
       alphabetGame.reset();
     }
     break;
@@ -243,6 +243,9 @@ public void goBack() {
     {
       screen = 0;
       colorGame.reset();
+      alphabetGame.reset();
+      alphabetGame.setneedInstructions(true);
+      colorGame.setneedInstructions(true);
     }
   } else {
     image(backUncolored, 10, -25, 130, 144);
