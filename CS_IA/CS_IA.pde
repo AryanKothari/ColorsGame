@@ -12,6 +12,7 @@ int volume = 10;
 int screen = 0;
 PFont font;
 PFont audioFont;
+PFont alphabetFont;
 
 PImage exitON;
 PImage exitOFF;
@@ -34,6 +35,7 @@ void setup() {
 
   font = createFont("font.TTF", 32);
   audioFont = createFont("audiocontrol.ttf", 32);
+  alphabetFont = createFont("alphabetFont.ttf", 32);
   exitON = loadImage("EXITON.png");
   exitOFF = loadImage("EXITOFF.png");
   audioImgON = loadImage("AUDIOON.png");
@@ -141,6 +143,30 @@ void draw() {
 void keyPressed() {
   if (key == ESC) {
     key = 5;
+  }
+}
+
+void mouseClicked() {
+  switch(screen) 
+  {
+  case 1: 
+    if (mouseX> 1250 && mouseX < 1400 && mouseY > 100 && mouseY < 150) {
+      colorGame.reset();
+    } 
+    break;
+  case 2:
+    if (mouseX>width/2+40 && mouseX < width/2+600 && mouseY>height/2-300 && mouseY < height/2 - 10) {
+      alphabetGame.checkAnswer("capital");
+    } 
+
+    if (mouseX>width/2+40 && mouseX < width/2+600 && mouseY>height/2+70 && mouseY < height/2 + 370) {
+      alphabetGame.checkAnswer("lowercase");
+    } 
+
+    if (mouseX> 1250 && mouseX < 1400 && mouseY > 100 && mouseY < 150) {
+      alphabetGame.reset();
+    }
+    break;
   }
 }
 

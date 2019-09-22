@@ -130,9 +130,6 @@ class colorGame
   private void resetButton() {
     if (mouseX> 1250 && mouseX < 1400 && mouseY > 100 && mouseY < 150) {
       fill(0, 0, 255, 90);
-      if (mousePressed) {
-        reset();
-      }
     } else {
       fill(0, 0, 0);
     }
