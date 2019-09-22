@@ -6,7 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 Minim minim;
 AudioPlayer backgroundmusic;
-int volume = 0;
+int volume = 10;
 
 
 int screen = 0;
@@ -148,6 +148,7 @@ void keyPressed() {
 
 
 
+
 void quitButton(PImage img) {
   image(img, width-60, 10, 56, 40);
 }
@@ -156,7 +157,7 @@ void audio(PImage img) {
   image(img, width-120, 10, 56, 40);
 
   if (audioConfig) {
-    fill(155, 201, 50, 20);
+    fill(155, 250, 50, 20);
     rect(width/2-528, 20, 1000, 80, 10);
     fill(0, 0, 0);
     textFont(audioFont);
@@ -172,7 +173,7 @@ void audio(PImage img) {
       fill(0, 0, 255);
       text("OFF", 450, 60);
       if (mousePressed) {
-        volume = -50;
+        volume = -100;
         audioConfig = false;
       }
     }
@@ -210,13 +211,14 @@ void audio(PImage img) {
 }
 
 public void goBack() {
-  if (mouseX > 10 && mouseX < 100 && mouseY > 0 && mouseY < 100) {
-    image(backColored, 10, -35, 130, 144);
+  if (mouseX > 10 && mouseX < 150 && mouseY > 0 && mouseY < 100) {
+    image(backColored, 10, -25, 130, 144);
     if (mousePressed)
     {
       screen = 0;
+      colorGame.reset();
     }
   } else {
-    image(backUncolored, 10, -35, 130, 144);
+    image(backUncolored, 10, -25, 130, 144);
   }
 }
