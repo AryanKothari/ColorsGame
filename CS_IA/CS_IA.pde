@@ -147,6 +147,10 @@ void keyPressed() {
 }
 
 void mouseClicked() {
+  
+   if (mouseX > width-120 && 
+    mouseX < width-60 && mouseY > 5 && mouseY < 50) {
+    audio(audioImgON);
   switch(screen) 
   {
   case 1: 
