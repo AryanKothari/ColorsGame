@@ -25,7 +25,11 @@ class alphabetGame
 
   public void Draw()
   {
-    letter.get(letteronDisplay).Draw();
+    if (letteronDisplay < 20) {
+      letter.get(letteronDisplay).Draw();
+    } else {
+      reset();
+    }
 
 
     displayButtons();
